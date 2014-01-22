@@ -14,6 +14,11 @@ var path = require('path');
 // 		For help customising the app server,
 // 		see the Express docs: http://expressjs.com/
 var app = express();
+
+// Create Kattegat
+var kattegat = require("kattegat")(app);
+
+// Set up server
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -28,11 +33,15 @@ app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/js", express.static(path.join(__dirname, 'bower_components')));
+
+// Add kattegat middleware
+app.use(kattegat.store());
+
+// Add error handling
 app.use(express.errorHandler());
 
-// Load up Kattegat and insert into Express
-var kattegat = require("kattegat")(app);
-app.use(kattegat.store());
+// Add realtime features
+kattegat.realtime(server);
 
 // Reload when we change the sources
 livereload(app);
