@@ -1,0 +1,21 @@
+body {
+  padding: 1.5em;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF
+}
+form {
+	display: block;
+}
+label {
+	display: block;
+}
+.hinted {
+	border-bottom: 1px dotted silver;
+}
+.tip {
+	background-color: #FFFFCA;
+	padding: 0.5em;
+}
+

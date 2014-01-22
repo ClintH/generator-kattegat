@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storage demo</title>
+	<!-- Use the demos stylesheet -->
+	<link rel='stylesheet' href='style.css'>
+
+	<!-- Add in jQuery -->
+	<script src="/js/jquery/jquery.min.js"></script>
+	
+	<!-- Add in demo JS (demos/store.js) -->
+	<script src="store.js"></script>
+</head>
+
+<!--
+Not much happens in the HTML. 
+
+Things to note:
+* It's generally good to avoid using ids to refer to elements, because ids must be unique, and it can be tricky to track which ids are used previously. We use ids for the buttons, since there is only a handful, but for the input elements we use the name attribute. Look in the JS file to see how referencing them is different
+* We use plain text and list input mechanisms. HTML offers a bunch of others as well
+* I've grouped form elements within a label element, but this is not necessary.
+-->
+<body>
+	<h1>Storage demo</h1>
+	<p>Demonstrates how to work with remote storage. View the source to see more.</p>
+	<p>Kattegat uses <a href="https://github.com/louischatriot/nedb">nedb</a> for storing data, so please read their docs for more information - especially on advanced querying.</p>
+	<div class="note">Note: Use your browser's console to see the results of your actions</div>
+	
+	<hr>
+	<h2>Inserting</h2>
+	<button id="insertTest">Insert test data</button>
+	<form name="insertForm">
+		<label>
+			Name
+			<input name="name" placeholder="Name">
+		</label>
+
+		<label>
+			Age
+			<input name="age" placeholder="Age">
+		</label>
+
+		<label>
+			Favourite Colour
+			<select name="colour">
+				<option>Blue</option>
+				<option>Red</option>
+				<option>Green</option>
+				<option>Yellow</option>
+			</select>
+		</label>
+
+		<button id="insertButton">Insert</button>
+		<div class="tip">After inserting a couple of entries, click 'Find All' below to see what you've added</div>
+	</form>
+	
+	<hr>
+	<h2>Getting data out again</h2>
+	<button id="findAllButton">Find All</button>
+	<form>
+		<label>
+			Names containing
+			<input name="q">
+			<button id="findSubstringButton">Find</button>
+		</label>
+		
+	</form>
+	
+	<form>
+		<label>
+			Favourite colour of
+			<select name="q">
+				<option>Blue</option>
+				<option>Red</option>
+				<option>Green</option>
+				<option>Yellow</option>
+			</select>
+			<button id="findExactButton">Find</button>
+		</label>
+	</form>
+
+	<form>
+		<label>
+			Age greater than:
+			<input name="q">
+		</label>
+		<button id="findLogicButton">Find</button>
+	</form>
+
+	<hr>
+	<h2>Updating</h2>
+	<p>Updating allows you to change existing documents</p>
+	<form>
+		<label>
+			Change those with name: 
+			<input name="nameOld" placeholder="Old name">
+		</label>
+
+		<label>
+			to this new name:
+			<input name="nameNew" placeholder="New name">
+		</label>
+		<button id="updateButton">Update</button>
+		<div class="tip">After clicking 'Update', click 'Find All' below to get a fresh list</div>
+	</form>
+	
+	<hr>
+	<h2>Removing</h2>
+	<button id="removeAllButton">Remove all</button>
+	<form>
+		<label>
+			Remove those with name: 
+			<input name="q" placeholder="Name">
+			<button id="removeButton">Remove</button>
+		</label>
+	</form>
+</body>
+</html>

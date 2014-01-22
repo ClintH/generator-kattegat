@@ -1,0 +1,9 @@
+{
+  "name":"<%= _.slugify(appName) %>",
+  "version": "0.0.0",
+  "dependencies": {
+    "lodash": "2.4.1",
+    "jquery": "2.0.3",
+    "pointerevents-polyfill": "0.1.1"
+  }
+}

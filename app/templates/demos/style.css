@@ -1,0 +1,24 @@
+body {
+  padding: 1.5em;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF
+}
+form {
+	display: block;
+}
+label {
+	display: block;
+}
+.tip {
+	background-color: #FFFFCE;
+	padding: 1em;
+}
+.note {
+	background-color: #FFBD9D;
+	padding: 1em;
+}
+form .tip {
+	font-size: 80%;
+}
