@@ -23,7 +23,7 @@ Next, install the Kattegat generator
 $ npm install -g generator-kattegat
 ```
 
-# Making a server
+# <a name="make-server"></a> Making a server
 
 Now that the setup tasks are out of the way, you are able to generate a new Kattegat server when ever you like.
 
@@ -45,7 +45,7 @@ It will take some time to run, and you'll see a lot of stuff scrolling by. Once 
 
 [Continue on!](https://github.com/ClintH/kattegat)
 
-# Starter pages
+# <a name="make-page"></a> Starter pages
 
 When you first make your app, the directory `BASE\public\template` is created, with HTML, CSS and JS files ready to go. This is a great starting point for making quick sketches or experiments.
 

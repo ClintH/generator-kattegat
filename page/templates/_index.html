@@ -2,48 +2,56 @@
 <html>
 <head>
 	<title><%= pageName %></title>
-	
-	<!-- Makes the page a bit more mobile-friendly -->
+
+	<!-- Make the page a bit more mobile-friendly -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, target-densitydpi=device-dpi">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	
-	<!-- Reference the base stylesheets and a stylesheet just for this page -->
+	<!-- Reference the base stylesheets. 
+       You don't need to use them but they are a useful starting point.
+       -->
 	<link rel='stylesheet' href='/bower_components/pure/pure-min.css'>
 	<link rel='stylesheet' href='/base.css'>
 
+	<!-- If you want to make changes,
+	     edit BASE/public/<%= pageName %>/style.css
+	     -->
 	<link rel='stylesheet' href='style.css'>
 
 </head>
 <body>
 	<h1><%= pageName %></h1>
-	<p>Oh hai, this is an auto-generated Kattegat page.</p>
+	<p>Oh hai, this is an automatically generated <a href="https://github.com/ClintH/kattegat/">Kattegat</a> page.</p> <a href="/demos">See some demos</a> or <a href="https://github.com/ClintH/kattegat/blob/master/README.md">read more</a>.
 	
 	<p>Use this file as the basis for your hacking. It shows you how to reference the included JS libraries, reference your own JS files and how to link to a resource.</p>
-	<p>This is how we reference an image: <img src="/images/test.png">
-	<p>And this is a button that is wired up in a test Javascript file <button id="clickMe">Click me!</button> (you should get an alert box)</p> 
+	<p>This is a reference to an image that lives in the <code>public/images</code> directory:</p>
+	<p><img title="Wow! Such image, so amaze" src="/images/test.png"></p>
+	<p>And this is a button that is wired up in the Javascript file <button id="clickMe">Click me!</button> (you should get an alert box)</p> 
 
 	<h2>Generating pages</h2>
-	<p>At the terminal, in the base directory where you previously created the server, you can generate a new page by simply running the following command, which prompts you for a page name:</p>
+	<p>You can always generate a new page (HTML+CSS+JS) from the command line:</p>
 	<p><code>$ yo kattegat:page</code></p>
-	<p>Or if you want to be fancy, you can tell it the page name straight away:</p>
+	<p>Or if you want to be fancy, you can tell it the page name straight away, eg:</p>
 	<p><code>$ yo kattegat:page <%= pageName %></code></p>
 </body>
 
-<!-- 
-SCRIPT REFERENCING
-******************
-Here we pull in Javascript files for the page. It's a good idea to keep JS out of the HTML.
--->
+<!-- SCRIPT REFERENCING
+     Here we pull in Javascript files for the page.
+     It's a good idea to keep JS separate from HTML.
+     -->
 
-<!-- First import the libraries such as jQuery etc -->
+<!-- Import libraries such as jQuery etc -->
 <script src="/bower_components/libraries.js"></script>
 
-<!-- And then load our own custom script for this page -->
+<!-- Import our own Javascript which is special for this page.
+     This is the one you want to edit to change the interactivity.
+        (It's located on your computer: BASE/public/<%= pageName %>/script.js)
+     -->
 <script src="script.js"></script>
 
-<!-- This loads a magic script that does the live reloading -->
+<!-- Imports a script that does the live reloading trick -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
 
-<!-- Generated on <%= (new Date).toISOString().split('T')[0] %> -->
+<!-- Page generated on <%= (new Date).toISOString().split('T')[0] %> -->
 </html>
