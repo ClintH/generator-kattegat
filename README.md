@@ -41,9 +41,12 @@ And now run the Kattegat generator. It will ask you for a name of the app, or ju
 $ yo kattegat
 ```
 
-It will take some time to run, and you'll see a lot of stuff scrolling by. Once it's done, you're ready to continue.
+It will take some time to run, and you'll see a lot of stuff scrolling by. Once it's done, and you get the message "Done, without errors" you're ready to continue.
 
 [Continue on!](https://github.com/ClintH/kattegat)
+
+# If you get an error
+If you get an error running the `npm install` or `yo kattegat` commands, try them once more. I've noticed sometimes I get permission denied errors which go away after repeating the command.
 
 # <a name="make-page"></a> Starter pages
 

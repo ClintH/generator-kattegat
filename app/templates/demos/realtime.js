@@ -1,14 +1,15 @@
 // This is our reference to the server
 var socket = null;
 
-// This magic code generates a random id for this client (from http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript)
-
 // Wire up event handlers
 $(document).ready(function() {
-
 	
-	// Connect to the address the demo was loaded from
+	// By default, we'll connect to your own server:
 	var url = "http://" + window.location.host;
+
+	// But you can connect to someone else's Kattegat server
+	// eg, by setting url to "http://130.102.251.100:3000"
+	// (or whatever the external address of the machine is)
 	socket = io.connect(url);
 	
 	// Listen to events from the server
@@ -204,8 +205,6 @@ function dataGet(e) {
 	var data = {
 		name: $("input[name='name']", e.target.parentElement).val(),
 	}
-
-	console.dir(data);
 	socket.emit("get", data);
 	// The server will respond with a 'data' event
 	// -- this is handled further up in the code

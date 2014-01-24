@@ -3,9 +3,7 @@
 <head>
 	<title>Storage demo</title>
 	<link rel='stylesheet' href='/bower_components/pure/pure-min.css'>
-
-	<!-- Use the demos stylesheet -->
-	<link rel='stylesheet' href='style.css'>
+	<link rel='stylesheet' href='/base.css'>
 
 	<!-- Add in libraries -->
 	<script src="/bower_components/libraries.js"></script>
@@ -30,7 +28,8 @@ Things to note:
 	
 	<hr>
 	<h2>Inserting</h2>
-	<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-inserting">Read the documentation</a>
+	<p>
+		<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-inserting">Read the documentation</a></p>
 	<button id="insertTest" class="pure-button">Insert test data</button>
 	<form name="insertForm" class="pure-form pure-form-stacked">
 		<fieldset>
@@ -38,7 +37,7 @@ Things to note:
 			<input name="name" placeholder="Name">
 
 			<label>Age</label>
-			<input name="age" placeholder="Age">
+			<input name="age" type="number" placeholder="Age">
 
 			<label>Favourite Colour</label>
 			<select name="colour">
@@ -49,13 +48,15 @@ Things to note:
 			</select>
 
 			<button id="insertButton" type="submit" class="pure-button pure-button-primary">Insert</button>
-			<p class="tip">After inserting a couple of entries, click 'Find All' below to see what you've added</p>
+			<p class="tip">
+				After inserting a couple of entries, click 'Find All' below to see what you've added</p>
 		</fieldset>
 	</form>
 	
 	<hr>
 	<h2>Getting data out again</h2>
-	<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-get">read the documentation</a>
+	<p>
+		<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-get">read the documentation</a></p>
 	<button id="findAllButton" class="pure-button">Find All</button>
 	<form class="pure-form pure-form-stacked">
 		<fieldset>
@@ -83,7 +84,7 @@ Things to note:
 	<form class="pure-form pure-form-stacked">
 		<fieldset>
 		<label>Age greater than</label>
-		<input name="q" length="2">
+		<input name="q" type="number" length="2">
 		<br />
 		<button id="findLogicButton" type="submit" class="pure-button pure-button-primary">Find</button>
 		</fieldset>
@@ -91,8 +92,10 @@ Things to note:
 
 	<hr>
 	<h2>Updating</h2>
-	<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-put">read the documentation</a>
-	<p>Updating allows you to change existing documents</p>
+	<p>
+		<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-put">read the documentation</a></p>
+	<p>
+		Updating allows you to change existing documents</p>
 	<form class="pure-form pure-form-stacked">
 		<fieldset>
 			<label>Change those with name</label>
@@ -108,7 +111,8 @@ Things to note:
 	
 	<hr>
 	<h2>Removing</h2>
-	<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-del">read the documentation</a>
+	<p>
+		<a href="https://github.com/ClintH/kattegat/blob/master/DOCS.md#storage-del">read the documentation</a></p>
 	<button id="removeAllButton" class="pure-button">Remove all</button>
 	<form class="pure-form pure-form-stacked">
 		<fieldset>
