@@ -1,0 +1,7 @@
+// Generated on <%= (new Date).toISOString().split('T')[0] %>
+//
+// This is an additional CSS file where you can put
+// per-page customisations, such as this:
+h1 {
+	color: blue;
+}

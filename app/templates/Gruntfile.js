@@ -1,9 +1,8 @@
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 'use strict';
-var moment = require('moment');
+var moment = require('moment'),
+ _ = require("lodash")
  
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
 };
@@ -13,49 +12,21 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
  
   grunt.initConfig({
-    watch: {
-      options: {
-        nospawn: true,
-        livereload: LIVERELOAD_PORT
-      },
-      livereload: {
-        files: [
-          '*.html',
-          '*.js',
-          '*.css',
-          '*.jade',
-          '*.stylus'
-        ],
-        tasks: ['build']
-      }
-    },
-    express: {
-      options: {
-        port: 9000,
-        // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost',
-        serverreload: true,
-        showStack: true
-      },
-      livereload: {
-        options: {
-          middleware: function (connect) {
-            return [
-              lrSnippet,
-              mountFolder(connect, '.')
-            ];
-          }
+    bower_concat: {
+      all: {
+        exclude: ['pure'],
+        dest: 'bower_components/libraries.js',
+        callback: function(mainFiles, component) {
+          return _.map(mainFiles, function(filepath) {
+            // Use minified files is available
+            var min = filepath.replace(/\.js$/, '.min.js');
+            return grunt.file.exists(min) ? min : filepath;
+          });
         }
       }
     },
-    open: {
-      server: {
-        path: 'http://localhost:<%%= connect.options.port %>'
-      }
-    }
   });
  
-  grunt.registerTask('server', ['express', 'open', 'watch', 'express-keepalive']);
- 
- 
+ grunt.registerTask('default', ['bower_concat']);
+ grunt.registerTask('build', ['default']);
 };

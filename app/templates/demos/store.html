@@ -2,11 +2,13 @@
 <html>
 <head>
 	<title>Storage demo</title>
+	<link rel='stylesheet' href='/bower_components/pure/pure-min.css'>
+
 	<!-- Use the demos stylesheet -->
 	<link rel='stylesheet' href='style.css'>
 
-	<!-- Add in jQuery -->
-	<script src="/js/jquery/jquery.min.js"></script>
+	<!-- Add in libraries -->
+	<script src="/bower_components/libraries.js"></script>
 	
 	<!-- Add in demo JS (demos/store.js) -->
 	<script src="store.js"></script>
@@ -28,91 +30,89 @@ Things to note:
 	
 	<hr>
 	<h2>Inserting</h2>
-	<button id="insertTest">Insert test data</button>
-	<form name="insertForm">
-		<label>
-			Name
+	<button id="insertTest" class="pure-button">Insert test data</button>
+	<form name="insertForm" class="pure-form pure-form-stacked">
+		<fieldset>
+			<label>Name</label>
 			<input name="name" placeholder="Name">
-		</label>
 
-		<label>
-			Age
+			<label>Age</label>
 			<input name="age" placeholder="Age">
-		</label>
 
-		<label>
-			Favourite Colour
+			<label>Favourite Colour</label>
 			<select name="colour">
 				<option>Blue</option>
 				<option>Red</option>
 				<option>Green</option>
 				<option>Yellow</option>
 			</select>
-		</label>
 
-		<button id="insertButton">Insert</button>
-		<div class="tip">After inserting a couple of entries, click 'Find All' below to see what you've added</div>
+			<button id="insertButton" type="submit" class="pure-button pure-button-primary">Insert</button>
+			<p class="tip">After inserting a couple of entries, click 'Find All' below to see what you've added</p>
+		</fieldset>
 	</form>
 	
 	<hr>
 	<h2>Getting data out again</h2>
-	<button id="findAllButton">Find All</button>
-	<form>
-		<label>
-			Names containing
+	<button id="findAllButton" class="pure-button">Find All</button>
+	<form class="pure-form pure-form-stacked">
+		<fieldset>
+			<label>Names containing</label>
 			<input name="q">
-			<button id="findSubstringButton">Find</button>
-		</label>
-		
+			<br />
+			<button id="findSubstringButton" type="submit" class="pure-button pure-button-primary">Find</button>
+		</fieldset>
 	</form>
 	
-	<form>
-		<label>
-			Favourite colour of
+	<form class="pure-form pure-form-stacked">
+		<fieldset>
+			<label>Favourite colour</label>
 			<select name="q">
 				<option>Blue</option>
 				<option>Red</option>
 				<option>Green</option>
 				<option>Yellow</option>
 			</select>
-			<button id="findExactButton">Find</button>
-		</label>
+			<br />
+			<button id="findExactButton" type="submit" class="pure-button pure-button-primary">Find</button>
+		</fieldset>
 	</form>
 
-	<form>
-		<label>
-			Age greater than:
-			<input name="q">
-		</label>
-		<button id="findLogicButton">Find</button>
+	<form class="pure-form pure-form-stacked">
+		<fieldset>
+		<label>Age greater than</label>
+		<input name="q" length="2">
+		<br />
+		<button id="findLogicButton" type="submit" class="pure-button pure-button-primary">Find</button>
+		</fieldset>
 	</form>
 
 	<hr>
 	<h2>Updating</h2>
 	<p>Updating allows you to change existing documents</p>
-	<form>
-		<label>
-			Change those with name: 
+	<form class="pure-form pure-form-stacked">
+		<fieldset>
+			<label>Change those with name</label>
 			<input name="nameOld" placeholder="Old name">
-		</label>
 
-		<label>
-			to this new name:
+			<label>to this new name</label>
 			<input name="nameNew" placeholder="New name">
-		</label>
-		<button id="updateButton">Update</button>
-		<div class="tip">After clicking 'Update', click 'Find All' below to get a fresh list</div>
+			<br />
+			<button id="updateButton" type="submit" class="pure-button pure-button-primary">Update</button>
+			<p class="tip">After clicking 'Update', click 'Find All' below to get a fresh list</p>
+		</fieldset>
 	</form>
 	
 	<hr>
 	<h2>Removing</h2>
-	<button id="removeAllButton">Remove all</button>
-	<form>
-		<label>
-			Remove those with name: 
+	<button id="removeAllButton" class="pure-button">Remove all</button>
+	<form class="pure-form pure-form-stacked">
+		<fieldset>
+			<label>Remove those with name</label>
 			<input name="q" placeholder="Name">
-			<button id="removeButton">Remove</button>
-		</label>
+			<br />
+			<button id="removeButton" type="submit" class="pure-button pure-button-primary">Remove</button>
+		</fieldset>
 	</form>
 </body>
 </html>

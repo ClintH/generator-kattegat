@@ -11,11 +11,3 @@ form {
 label {
 	display: block;
 }
-.hinted {
-	border-bottom: 1px dotted silver;
-}
-.tip {
-	background-color: #FFFFCA;
-	padding: 0.5em;
-}
-

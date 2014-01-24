@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title>Realtime demo</title>
+	<link rel='stylesheet' href='/bower_components/pure/pure-min.css'>
+	
 	<!-- Use the demos stylesheet -->
 	<link rel='stylesheet' href='style.css'>
 
-	<!-- Add in jQuery -->
-	<script src="jquery.min.js"></script>
-	
+	<!-- Add in libraries -->
+	<script src="/bower_components/libraries.js"></script>
+		
 	<!-- Add in demo JS (demos/realtime.js) -->
 	<script src="realtime.js"></script>
 
@@ -24,41 +26,47 @@
 	<p>
 		Kattegat uses <a href="http://socket.io/#how-to-use">Socket.io</a> for realtime data.</p>
 	
-	<div class="note">Note: Use your browser's console to see the results of your actions</div>
+	<p class="note">Note: Use your browser's console to see the results of your actions</p>
 	
 	<hr>
 	<h2>Broadcasting</h2>
 	<p>
 		Broadcasting data sends it to all other clients connected to your server. If you want to be more specific about who receives data, see the Rooms section.</p>
-	<form>
-		<label>From
+	<form class="pure-form">
+		<fieldset>
+			<label>From</label>
 			<input name="name" placeholder="Name">
-		</label>
-		<label>Message
+			
+			<label>Message</label>
 			<input name="msg" placeholder="Message">
-		</label>
-		<button id="broadcastButton">Send</button>
+
+			<button id="broadcastButton" class="pure-button pure-button-primary">Send</button>
+		</fieldset>
 	</form>
 
 	<hr>
 	<h2>Rooms</h2>
 	<p>
 		'Rooms' can be joined or left. You're able to send data to a room, and when you've joined the room, you'll get all data sent to it as well. You can also find out who is in the room and receive events when users come and go.</p>
-	<form>
-		<label>Room name
+	<form class="pure-form">
+		<fieldset>
+			<label>Room name</label>
 			<input name="room" placeholder="Room name">
-		</label>
-		<button id="roomJoinButton">Join</button>
-		<button id="roomLeaveButton">Leave</button>
-		<button id="roomListButton">List</button>
-		<label>Message
+
+			
+			<label>Message</label>
 			<input name="msg" placeholder="Message">
-		</label>
-		<button id="roomMessageButton">Send to room</button>
+			<button id="roomMessageButton" class="pure-button pure-button-primary">Send to room</button>
+			
+			<button id="roomJoinButton" class="pure-button">Join</button>
+			<button id="roomLeaveButton" class="pure-button">Leave</button>
+			<button id="roomListButton" class="pure-button">List</button>
+			
+		</fieldset>
 	</form>
 	<p>
 		You can also get a list all rooms
-		<button id="listRoomsButton">List</button>
+		<button id="listRoomsButton" class="pure-button">List</button>
 		</p>
 	<hr>
 	<h2>Associating data</h2>
@@ -68,15 +76,17 @@
 		For data that changes frequently you should use the techniques in the broadcast and room-sending demos above.</p>
 	<p>
 		To play with this, have two demo windows open, and join them both to the same room. Set some data (eg key: colour, value: blue) on one window, and then do a room list on the other window.</p>
-	<form>
-		<label>Key
+	<form class="pure-form">
+		<fieldset>
+			<label>Key</label>
 			<input name="name" placeholder="Key">
-		</label>
-		<label>Value
+			
+			<label>Value</label>
 			<input name="value" placeholder="Value of data">
-		</label>
-		<button id="dataPutButton">Set</button>
-		<button id="dataGetButton">Get</button>
+			
+			<button id="dataPutButton" class="pure-button">Set</button>
+			<button id="dataGetButton" class="pure-button">Get</button>
+		</fieldset>
 	</form>
 </body>
 </html>

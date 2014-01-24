@@ -15,9 +15,6 @@ var path = require('path');
 // 		see the Express docs: http://expressjs.com/
 var app = express();
 
-// Create Kattegat
-var kattegat = require("kattegat")(app);
-
 // Set up server
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +29,11 @@ app.use(express.session());
 app.use(app.router);
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/js", express.static(path.join(__dirname, 'bower_components')));
+app.use("/bower_components", express.static(path.join(__dirname, 'bower_components')));
+app.use("/lib", express.static(path.join(__dirname, 'bower_components')));
+
+// Create Kattegat
+var kattegat = require("kattegat")(app);
 
 // Add kattegat middleware
 app.use(kattegat.store());
@@ -41,13 +42,14 @@ app.use(kattegat.store());
 app.use(express.errorHandler());
 
 // Add realtime features
+var server = http.createServer(app);
 kattegat.realtime(server);
 
 // Reload when we change the sources
 livereload(app);
 
 // Start the server
-http.createServer(app).listen(app.get('port'), function(){
+server.listen(app.get('port'), function(){
   console.log('<%= appName %> has started; you can access it from one of these addresses');
   kattegat.util.hintUrls(app.get('port'));
   console.log("\nTo access your server from another device, make sure it's on the same network.")

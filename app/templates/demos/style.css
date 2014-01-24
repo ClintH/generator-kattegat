@@ -1,24 +1,32 @@
-body {
-  padding: 1.5em;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html {
+	padding: 1.5em;
+	margin-left: 2em;
+	margin-right: 2em;
+	font-family: "Consolas", "Courier New", monospaced;
+	background-color: #F3F3F3;
 }
-a {
-  color: #00B7FF
-}
-form {
-	display: block;
-}
+
 label {
-	display: block;
+	text-transform: uppercase;
+	color: #939393;
 }
-.tip {
-	background-color: #FFFFCE;
+
+h1 {
+	color: #FF0080;
+}
+
+a:link {
+ color: #058CFA;
+}
+a:visited {
+	color: #208CE6;
+}
+
+.tip,.note {
+	background-color: rgba(255,255,205,0.5);
 	padding: 1em;
 }
+
 .note {
-	background-color: #FFBD9D;
-	padding: 1em;
-}
-form .tip {
-	font-size: 80%;
+	font-weight: bold;
 }
