@@ -12,10 +12,11 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
  
   grunt.initConfig({
+    clean: ['bower_components/bower_libs.js', 'bower_components/libraries.js'],
     bower_concat: {
       all: {
         exclude: ['pure'],
-        dest: 'bower_components/libraries.js',
+        dest: 'bower_components/bower_libs.js',
         callback: function(mainFiles, component) {
           return _.map(mainFiles, function(filepath) {
             // Use minified files is available
@@ -25,8 +26,14 @@ module.exports = function (grunt) {
         }
       }
     },
+    concat: {
+      all: {
+        src: ['bower_components/*.js'],
+        dest: 'bower_components/libraries.js'
+      }
+    },
   });
  
- grunt.registerTask('default', ['bower_concat']);
+ grunt.registerTask('default', ['clean', 'bower_concat', "concat"]);
  grunt.registerTask('build', ['default']);
 };

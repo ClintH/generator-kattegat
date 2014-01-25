@@ -48,7 +48,7 @@ livereload(app);
 
 // Start the server
 server.listen(app.get('port'), function() {
-	console.log("");
+  console.log("");
   console.log('<%= appName %> has started; you can access it from one of these addresses');
   kattegat.util.hintUrls(app.get('port'));
   console.log("\nTo access your server from another device, make sure it's on the same network.")

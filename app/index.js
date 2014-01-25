@@ -14,7 +14,6 @@ var KattegatGenerator = module.exports = function KattegatGenerator(args, option
     console.log("");
     console.log("                   Type 'node app' to start.");
     console.log("");
-
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -43,6 +42,8 @@ KattegatGenerator.prototype.app = function app() {
   this.mkdir('views');
   this.mkdir('routes');
   this.mkdir('public');
+  this.mkdir('bower_components');
+
   this.template('_index.html', 'public/index.html');
 
   this.mkdir('public/images');
@@ -51,12 +52,14 @@ KattegatGenerator.prototype.app = function app() {
   this.mkdir("public/demos");
   this.directory("demos", "public/demos")
   this.copy("base.css", "public/base.css")
+  this.copy("base.js", "bower_components/base.js")
 
   this.template('Gruntfile.js', 'Gruntfile.js');
   this.template('_app.js', 'app.js');
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
   this.template('_config.json', 'config.json');
+
 };
 
 KattegatGenerator.prototype.projectfiles = function projectfiles() {
@@ -64,6 +67,7 @@ KattegatGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('jshintrc', '.jshintrc');
   this.copy("bowerrc", ".bowerrc");
   this.copy("gitignore", ".gitignore");
+  this.copy("nodemon.json", "nodemon.json");
 };
 
 KattegatGenerator.prototype.generateTemplate = function generateTemplate() {

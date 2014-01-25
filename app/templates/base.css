@@ -42,3 +42,19 @@ hr {
     border-bottom: 1px dashed rgba(255, 0, 204, 0.33);
     background: rgba(248, 0, 159, 0);
 }
+
+.toast {
+	color: white;
+	background-color: #1C1C1C;
+	padding: 1em;
+	z-index: 1000;
+	float: left;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.toast.error {
+	background-color: #610B0B;
+	color: #F8E0E0;
+}

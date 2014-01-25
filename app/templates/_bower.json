@@ -6,6 +6,10 @@
     "lodash": "2.4.1",
     "geolib": "1.3.5",
     "pointerevents-polyfill": "0.1.1",
-    "pure":"*"
+    "pure":"*",
+    "jquery.transit": "0.9.9",
+    "hammerjs": "1.0.6",
+    "chroma-js": "0.5.6",
+    "momentjs" : "2.5.1"
   }
 }
