@@ -8,7 +8,7 @@ Make sure you've already installed:
 * [Node.js](http://nodejs.org/download/)
 * Git: [Windows](https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git) / [Mac](http://git-scm.com/download/mac)
 
-Install [Yeoman](http://yeoman.io) with the following command:
+Open up a terminal/command prompt, and install [Yeoman](http://yeoman.io) with the following command:
 
 (note: the $ is just a hint to let you know you should type 'npm install -g yo' at the command line. Don't type the $ in)
 
@@ -29,7 +29,23 @@ Now that the setup tasks are out of the way, you are able to generate a new Katt
 
 You'll probably only need one, but if something breaks, it's nice to know you can re-generate it!
 
-Make a new directory and change to it:
+Change to a directory where you want to keep your source files. This might be inside your regular documents folder. Here we'll make a 'code' directory in the root of our filesystem for easy access.
+
+On Mac:
+
+````
+mkdir /code
+$ cd /code
+````
+
+Or PC:
+
+````
+$ mkdir c:\code
+$ cd code
+````
+
+Now make a new directory for the app you're going to generate, and change to it:
 
 ```
 $ mkdir myapp && cd myapp
@@ -41,12 +57,14 @@ And now run the Kattegat generator. It will ask you for a name of the app, or ju
 $ yo kattegat
 ```
 
-It will take some time to run, and you'll see a lot of stuff scrolling by. Once it's done, and you get the message "Done, without errors" you're ready to continue.
+It will take some time to run, and you'll see a lot of stuff scrolling by. Once it's done and you get the message "Done, without errors" you're ready to continue.
+
+Make a note of the directory you're in. Type `pwd` on Mac or `cd` on Windows to find out where you are. This is your base directory. You'll need to come back here to start your server and this is also where you'll install samples and edit code.
 
 [Continue on!](https://github.com/ClintH/kattegat)
 
 # If you get an error
-If you get an error running the `npm install` or `yo kattegat` commands, try them once more. I've noticed sometimes I get permission denied errors which go away after repeating the command.
+If you get an error running the `npm install` or `yo kattegat` commands, try them once more. Sometimes I get permission denied errors which go away after repeating the command.
 
 # <a name="make-page"></a> Starter pages
 
