@@ -34,24 +34,25 @@
 	<p><code>$ yo kattegat:page</code></p>
 	<p>Or if you want to be fancy, you can tell it the page name straight away, eg:</p>
 	<p><code>$ yo kattegat:page <%= pageName %></code></p>
+
+	<!-- SCRIPT REFERENCING
+	     Here we pull in Javascript files for the page.
+	     It's a good idea to keep JS separate from HTML.
+	     -->
+
+	<!-- Import libraries such as jQuery etc -->
+	<script src="/bower_components/libraries.js"></script>
+
+	<!-- Import our own Javascript which is special for this page.
+	     This is the one you want to edit to change the interactivity.
+	        (It's located on your computer: BASE/public/<%= pageName %>/script.js)
+	     -->
+	<script src="script.js"></script>
+
+	<!-- Imports a script that does the live reloading trick -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
+
+	<!-- Page generated on <%= (new Date).toISOString().split('T')[0] %> -->
 </body>
 
-<!-- SCRIPT REFERENCING
-     Here we pull in Javascript files for the page.
-     It's a good idea to keep JS separate from HTML.
-     -->
-
-<!-- Import libraries such as jQuery etc -->
-<script src="/bower_components/libraries.js"></script>
-
-<!-- Import our own Javascript which is special for this page.
-     This is the one you want to edit to change the interactivity.
-        (It's located on your computer: BASE/public/<%= pageName %>/script.js)
-     -->
-<script src="script.js"></script>
-
-<!-- Imports a script that does the live reloading trick -->
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
-
-<!-- Page generated on <%= (new Date).toISOString().split('T')[0] %> -->
 </html>
