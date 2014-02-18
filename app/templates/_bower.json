@@ -10,6 +10,7 @@
     "jquery.transit": "0.9.9",
     "hammerjs": "1.0.6",
     "tinycolor": "0.9.16",
-    "momentjs" : "2.5.1"
+    "momentjs" : "2.5.1",
+    "jquery-hammerjs": "1.0.1"
   }
 }
