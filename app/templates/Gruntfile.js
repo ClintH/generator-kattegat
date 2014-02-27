@@ -10,7 +10,51 @@ var mountFolder = function (connect, dir) {
 module.exports = function (grunt) {
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
- 
+  grunt.registerTask('bowerInstall', 'install client-side JS', function() {
+    var exec = require('child_process').exec;
+    var cb = this.async();
+    exec('bower install', {}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+  });
+
+  grunt.registerTask('bowerUpdate', 'update client-side JS', function() {
+    var exec = require('child_process').exec;
+    var cb = this.async();
+    exec('bower update', {}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+  });
+
+  grunt.registerTask('samples', 'downloads samples', function() {
+    var exec = require('child_process').exec;
+    var cb = this.async();
+    exec('cd public && git clone https://github.com/ClintH/dia-samples.git', {}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+  });
+
+  grunt.registerTask('samplesUpdate', 'updates samples', function() {
+    var exec = require('child_process').exec;
+    var cb = this.async();
+    exec('cd public/dia-samples && git reset --hard HEAD && git pull', {}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+  });
+
+  grunt.registerTask('kattegatUpdate', 'updates kattegat', function() {
+    var exec = require('child_process').exec;
+    var cb = this.async();
+    exec('npm update kattegat', {}, function(err, stdout, stderr) {
+        console.log(stdout);
+        cb();
+    });
+  });
+
   grunt.initConfig({
     clean: ['bower_components/bower_libs.js', 'bower_components/libraries.js'],
     bower_concat: {
@@ -34,6 +78,7 @@ module.exports = function (grunt) {
     },
   });
  
- grunt.registerTask('default', ['clean', 'bower_concat', "concat"]);
+ grunt.registerTask('default', ['clean', 'bowerInstall', 'bower_concat', "concat", "samples"]);
  grunt.registerTask('build', ['default']);
+ grunt.registerTask('update', ['clean', 'bowerUpdate', 'bowerInstall', 'bower_concat', "concat", "samplesUpdate", "kattegatUpdate"]);
 };

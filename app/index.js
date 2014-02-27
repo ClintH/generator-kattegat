@@ -10,7 +10,7 @@ var KattegatGenerator = module.exports = function KattegatGenerator(args, option
     console.log(" (=^Y^=)  (=^Y^=)  (=^Y^=)  (=^Y^=)  (=^Y^=)  (=^Y^=)  (=^Y^=)  (=^Y^=)");
     console.log("  (>o<)    (>o<)    (>o<)    (>o<)    (>o<)    (>o<)    (>o<)    (>o<)");
     console.log("");
-    console.log("             Kattegat has generated an app for you");
+    console.log("             Kattegat has generated a project for you");
     console.log("");
     console.log("                   Type 'node app' to start.");
     console.log("");
@@ -21,14 +21,12 @@ var KattegatGenerator = module.exports = function KattegatGenerator(args, option
 
 util.inherits(KattegatGenerator, yeoman.generators.Base);
 
-
-
 KattegatGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
   var prompts = [{
     name: 'appName',
-    message: 'What would you like to call the app?',
-    default: "kattegat-app"
+    message: 'What would you like to call the project?',
+    default: "kattegat-project"
   }];
 
   this.prompt(prompts, function (props) {
@@ -52,15 +50,14 @@ KattegatGenerator.prototype.app = function app() {
   this.mkdir("public/demos");
   this.directory("demos", "public/demos")
   this.copy("base.css", "public/base.css")
-  this.copy("base.js", "bower_components/base.js")
-  this.copy("jq-helpers.js", "bower_components/jq-helpers.js")
 
+  this.mkdir("public/samples");
+  
   this.template('Gruntfile.js', 'Gruntfile.js');
   this.template('_app.js', 'app.js');
   this.template('_package.json', 'package.json');
   this.template('_bower.json', 'bower.json');
   this.template('_config.json', 'config.json');
-
 };
 
 KattegatGenerator.prototype.projectfiles = function projectfiles() {
