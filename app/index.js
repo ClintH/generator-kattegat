@@ -53,6 +53,7 @@ KattegatGenerator.prototype.app = function app() {
   this.directory("demos", "public/demos")
   this.copy("base.css", "public/base.css")
   this.copy("base.js", "bower_components/base.js")
+  this.copy("jq-helpers.js", "bower_components/jq-helpers.js")
 
   this.template('Gruntfile.js', 'Gruntfile.js');
   this.template('_app.js', 'app.js');
