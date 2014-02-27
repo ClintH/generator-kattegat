@@ -1,6 +1,6 @@
 {
   "name": "generator-kattegat",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Kattegat generator",
   "keywords": [
     "yeoman-generator"
