@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= pageName %></title>
+	<title><%= sketchName %></title>
 
-	<!-- Make the page a bit more mobile-friendly -->
+	<!-- Make the sketch a bit more mobile-friendly -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, target-densitydpi=device-dpi">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -15,44 +15,44 @@
 	<link rel='stylesheet' href='/base.css'>
 
 	<!-- If you want to make changes,
-	     edit BASE/public/<%= pageName %>/style.css
+	     edit BASE/public/<%= sketchName %>/style.css
 	     -->
 	<link rel='stylesheet' href='style.css'>
 
 </head>
 <body>
-	<h1><%= pageName %></h1>
-	<p>Oh hai, this is an automatically generated <a href="https://github.com/ClintH/kattegat/">Kattegat</a> page.</p> <a href="/demos">See some demos</a> or <a href="https://github.com/ClintH/kattegat/blob/master/README.md">read more</a>.
+	<h1><%= sketchName %></h1>
+	<p>Oh hai, this is an automatically generated <a href="https://github.com/ClintH/kattegat/">Kattegat</a> sketch.</p> <a href="/demos">See some demos</a> or <a href="https://github.com/ClintH/kattegat/blob/master/README.md">read more</a>.
 	
 	<p>Use this file as the basis for your hacking. It shows you how to reference the included JS libraries, reference your own JS files and how to link to a resource.</p>
 	<p>This is a reference to an image that lives in the <code>public/images</code> directory:</p>
 	<p><img title="Wow! Such image, so amaze" src="/images/test.png"></p>
 	<p>And this is a button that is wired up in the Javascript file <button id="clickMe">Click me!</button> (you should get an alert box)</p> 
 
-	<h2>Generating pages</h2>
-	<p>You can always generate a new page (HTML+CSS+JS) from the command line:</p>
-	<p><code>$ yo kattegat:page</code></p>
-	<p>Or if you want to be fancy, you can tell it the page name straight away, eg:</p>
-	<p><code>$ yo kattegat:page <%= pageName %></code></p>
+	<h2>Generating sketch</h2>
+	<p>You can always generate a new sketch (HTML+CSS+JS) from the command line:</p>
+	<p><code>$ yo kattegat:sketch</code></p>
+	<p>Or if you want to be fancy, you can tell it the sketch name straight away, eg:</p>
+	<p><code>$ yo kattegat:sketch <%= sketchName %></code></p>
 
 	<!-- SCRIPT REFERENCING
-	     Here we pull in Javascript files for the page.
+	     Here we pull in Javascript files for the sketch.
 	     It's a good idea to keep JS separate from HTML.
 	     -->
 
 	<!-- Import libraries such as jQuery etc -->
 	<script src="/bower_components/libraries.js"></script>
 
-	<!-- Import our own Javascript which is special for this page.
+	<!-- Import our own Javascript which is special for this sketch.
 	     This is the one you want to edit to change the interactivity.
-	        (It's located on your computer: BASE/public/<%= pageName %>/script.js)
+	        (It's located on your computer: BASE/public/<%= sketchName %>/script.js)
 	     -->
 	<script src="script.js"></script>
 
 	<!-- Imports a script that does the live reloading trick -->
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js"></' + 'script>')</script>
 
-	<!-- Page generated on <%= (new Date).toISOString().split('T')[0] %> -->
+	<!-- Sketch generated on <%= (new Date).toISOString().split('T')[0] %> -->
 </body>
 
 </html>

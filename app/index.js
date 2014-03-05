@@ -70,7 +70,7 @@ KattegatGenerator.prototype.projectfiles = function projectfiles() {
 
 KattegatGenerator.prototype.generateTemplate = function generateTemplate() {
   var cb = this.async();
-  this.invoke("kattegat:page", {options: {nested:true, pageName:"template"}}, cb);
+  this.invoke("kattegat:sketch", {options: {nested:true, sketchName:"template"}}, cb);
 
 }
 KattegatGenerator.prototype.install = function install() {
