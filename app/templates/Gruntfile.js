@@ -59,6 +59,9 @@ module.exports = function (grunt) {
     clean: ['bower_components/bower_libs.js', 'bower_components/libraries.js'],
     bower_concat: {
       all: {
+        mainFiles: {
+          'WeakMap' : [ '../weakmap.js']
+        },
         exclude: ['pure'],
         dest: 'bower_components/bower_libs.js',
         callback: function(mainFiles, component) {
