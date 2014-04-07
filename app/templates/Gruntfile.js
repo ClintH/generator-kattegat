@@ -60,7 +60,8 @@ module.exports = function (grunt) {
     bower_concat: {
       all: {
         mainFiles: {
-          'WeakMap' : [ '../weakmap.js']
+          'WeakMap' : [ '../weakmap.js'],
+          'jsfeat': ['build/jsfeat-min.js']
         },
         exclude: ['pure'],
         dest: 'bower_components/bower_libs.js',
