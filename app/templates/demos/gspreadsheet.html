@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Spreadsheet demo</title>
+	<link rel='stylesheet' href='/bower_components/pure/pure-min.css'>
+	<link rel='stylesheet' href='/base.css'>
+
+	<!-- Add in libraries -->
+	<script src="/bower_components/libraries.js"></script>
+		
+	<!-- Add in demo JS (demos/gspreadsheet.js) -->
+	<script src="gspreadsheet.js"></script>
+
+	<!-- Add in Socket.io: this is needed for any realtime stuff -->
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+	<h1>Google Spreadsheet demo</h1>
+	<p>
+		Demonstrates 'subscribing' to a Google Spreadsheet, fetching data, and being notified when data changes.</p>
+	<p>
+		A spreadsheet can be a useful middleman between your Kattegat sketch and external services like <a href="http://ifttt.com">IFTTT</a> which can write to a Google spreadsheet.</p>
+	<p class="note">
+		Note: Use your browser's console to see the results of your actions</p>
+	
+	<hr>
+	<h2>Setup Spreadsheet</h2>
+	<p>
+		In order to use this feature, open the Google Spreadsheet you want to access in Google Drive. Go to "File > Publish to the Web". Click "Publish" (ensure that 'Entire Document' is selected). In the following panel, you'll get a link to your published spreadsheet. It will look something like:</p>
+	<p>
+		<code>https://docs.google.com/spreadsheets/d/<em>KEY</em>/pubhtml</code>
+		</p>
+	<p>
+		Eg: <code>https://docs.google.com/spreadsheets/d/1ghnYs4APEN421zNODNEbeMzkDGtio1ET39xHoSfXDsg/pubhtml</code></p>
+	<p>In order to use the spreadsheet with Kattegat, you need just the KEY part of the URL Google gives you.
+	<hr>
+	<h2>Subscribing</h2>
+	<p>
+		Subscribe to a spreadsheet with its published key in order to get its data and be notified of updates. Note that the server forgets subscriptions after 30 minutes, so re-subscribe periodically if need be.</p>
+	<form class="pure-form">
+		<fieldset>
+			<label>Spreadsheet key</label>
+			<input name="key" placeholder="Key" value="">
+			<button id="subscribeButton" class="pure-button pure-button-primary">Subscribe</button>
+		</fieldset>
+	</form>
+
+	<hr>
+	<h2>Fetch Data</h2>
+	<p>
+		You can fetch any already cached data for a given spreadsheet key.</p>
+	<p>
+		The cache will only contain data if the server is currently monitoring a spreadsheet. If you subscribe to an un-monitored spreadsheet, you'll get the complete set of data automatically.</p>
+	<form class="pure-form">
+		<fieldset>
+			<label>Spreadsheet key</label>
+			<input name="key" placeholder="Key" value="">
+			<button id="fetchButton" class="pure-button pure-button-primary">Fetch</button>
+		</fieldset>
+	</form>
+
+	
+</body>
+</html>
