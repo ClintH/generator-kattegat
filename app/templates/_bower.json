@@ -1,7 +1,10 @@
 {
-  "name":"<%= _.slugify(appName) %>",
+  "name":"<%= appName %>",
   "version": "0.0.0",
   "dependencies": {
     "kattegat-client": "latest"
+  },
+  "resolutions": {
+    "jquery": "2.2.1"
   }
 }

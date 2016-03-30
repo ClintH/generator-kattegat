@@ -1,7 +1,7 @@
 // Generated on <%= (new Date).toISOString().split('T')[0] %> using <%= pkg.name %> <%= pkg.version %>
 'use strict';
-var moment = require('moment'),
- _ = require("lodash")
+// var moment = require('moment'),
+var _ = require("lodash")
  
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
