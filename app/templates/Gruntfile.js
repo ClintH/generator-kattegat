@@ -63,7 +63,7 @@ module.exports = function (grunt) {
           'WeakMap' : [ '../weakmap.js'],
           'jsfeat': ['build/jsfeat-min.js']
         },
-        exclude: ['pure'],
+        exclude: ['TouchEmulator', 'pure', 'jsfeat', 'leaflet-dist', 'smoothie', 'geolib', 'flot'],
         dest: 'bower_components/bower_libs.js',
         callback: function(mainFiles, component) {
           return _.map(mainFiles, function(filepath) {
