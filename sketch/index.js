@@ -35,13 +35,15 @@ module.exports = generators.Base.extend({
       .replace(":", '')
       .replace("\"", "")
       .replace("'", "");
+    
     var base = 'public/' + this.sketchName + "/";
-  
     mkdirp.sync('public');
     mkdirp.sync(base);
     this.template('_index.html', base + 'index.html');
     this.template('_style.css', base + 'style.css');
     this.template('_script.js',   base + 'script.js');
+    this.copy("_.jshintrc", base + ".jshintrc");
+
   },
   done: function() {
     this.log.ok("Sketch generated. If your server is running, you can access it: /" + this.sketchName + "/")
