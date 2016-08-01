@@ -21,7 +21,7 @@
     "express": "4.13.4",
     "express-livereload": "0.0.24",
     "express-session": "^1.13.0",
-    "jade": "1.11.0",
+    "pug": "2.0.0-beta4",
     "lodash": "4.5.1",
     "method-override": "^2.3.5",
     "moment": "2.11.2",
@@ -30,6 +30,7 @@
     "request": "2.69.0",
     "socket.io": "1.4.5",
     "stylus": "0.53.0",
+    "ngrok": "^2.2.2",
     "kattegat":"latest"
   },
   "engines": {

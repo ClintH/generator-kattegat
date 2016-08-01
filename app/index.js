@@ -57,6 +57,7 @@ module.exports = generators.Base.extend({
     },
     files: function() {
       this.copy("base.css", "public/base.css")
+      this.copy("favicon.ico", "public/favicon.ico")
       this.copy('editorconfig', '.editorconfig');
       this.copy('jshintrc', '.jshintrc');
       this.copy("bowerrc", ".bowerrc");
