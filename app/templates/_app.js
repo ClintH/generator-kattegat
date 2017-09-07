@@ -5,7 +5,7 @@
 * Start it from the terminal with: 'npm start'
 *
 */
-var livereload = require('express-livereload'),
+var livereload = require('easy-livereload'),
    express = require('express'),
    bodyParser = require('body-parser'),
    http = require('http'),
@@ -44,7 +44,7 @@ app.use('/lib', express.static(path.join(__dirname, 'bower_components')));
 app.use(require('errorhandler')());
 
 // Init Kattegat and create a server
-var kattegat = require('kattegat').create(app, { debug: true });
+var kattegat = require('kattegat')(app, { debug: true });
 var server = kattegat.create();
 
 // Activate storage
